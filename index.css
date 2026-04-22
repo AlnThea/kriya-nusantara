@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fbf8f3;
+  color: #1a202c;
+}
+
+/* Optional: add some basic styling for headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0;
+  font-weight: 600;
+}
+
+/* Utility classes that might be used */
+.text-primary-500 {
+  color: #c68452;
+}
+.text-primary-700 {
+  color: #995337;
+}
+.bg-primary-50 {
+  background-color: #fbf8f3;
+}
