@@ -2,7 +2,9 @@ import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 import { PRODUCTS } from "../constants";
 
 // Initialize Gemini
-// NOTE: In a real production app, ensure this key is restricted or use a proxy.
+// SECURITY TODO: In a production app, NEVER expose the API key in the frontend.
+// Move Gemini API calls to a backend service or API proxy to keep the key secret.
+// The current setup is only suitable for local development / demo purposes.
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const SYSTEM_INSTRUCTION = `

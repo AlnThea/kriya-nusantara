@@ -10,6 +10,8 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
     },
     plugins: [react()],
+    // SECURITY WARNING: This exposes the API key to the browser bundle.
+    // For production, move Gemini API calls to a backend or API proxy.
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
@@ -18,12 +20,6 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, '.'),
       }
-    },
-    middleware: (req, res, next) => {
-      if (req.url.endsWith('.css')) {
-        res.setHeader('Content-Type', 'text/css');
-      }
-      next();
     }
   };
 });

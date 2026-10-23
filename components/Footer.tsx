@@ -38,11 +38,17 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-8 uppercase tracking-widest text-xs">Navigasi</h4>
             <ul className="space-y-4 text-sm">
-              {['Beranda', 'Tentang Kami', 'Koleksi', 'Testimoni'].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(' ', '')}`} className="flex items-center gap-2 hover:text-primary-500 transition-colors group">
+              {[
+                { label: 'Beranda', href: '#home' },
+                { label: 'Tentang Kami', href: '#about' },
+                { label: 'Koleksi', href: '#products' },
+                { label: 'Testimoni', href: '#testimonials' },
+                { label: 'Kontak', href: '#contact' }
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="flex items-center gap-2 hover:text-primary-500 transition-colors group">
                     <ArrowRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}
